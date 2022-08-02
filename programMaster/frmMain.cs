@@ -417,10 +417,14 @@ namespace programMaster
 
             btnPowerPlanner.Enabled = value;//c# app dont have folders
 
+            btnAllocator.Enabled = value;
+
             //menu buttons
             btnClose.Enabled = value;
             btnLogOff.Enabled = value;
             btnAdmin.Enabled = value;
+
+
         }
 
 
