@@ -25,7 +25,7 @@ namespace programMaster
         }
 
         private const int CP_NOCLOSE_BUTTON = 0x200;
-        protected override CreateParams CreateParams
+        protected override CreateParams CreateParams //absolutely no idea how this works but it overrides some code that runs on launch and makes the close button unclickable
         {
             get
             {
@@ -38,6 +38,7 @@ namespace programMaster
 
         private void btnDoorOrder_Click(object sender, EventArgs e)
         {
+            lockButtons(false);
             string app_name = "Order System";
             string path = @"C:\DesignAndSupply_Programs\Order_Program\";
             string server_path = @"\\designsvr1\apps\Design and Supply MS ACCESS\Frontend\Order Database 3.0\stable\";
@@ -63,6 +64,7 @@ namespace programMaster
             catch
             {
                 MessageBox.Show("Unable to download new version - Please check that you do not already have the " + app_name + " open.", "Unable to download " + app_name,MessageBoxButtons.OK,MessageBoxIcon.Error);
+                lockButtons(true);
                 return;
             }
 
@@ -81,10 +83,12 @@ namespace programMaster
             //download the new version from the server
             File.Copy(server_path + app_name + version, full_local_path);
             Process.Start(full_local_path);
+            lockButtons(true);
         }
 
         private void btnComplaint_Click(object sender, EventArgs e)
         {
+            lockButtons(false);
             string app_name = "Complaint_Program";
             string path = @"C:\DesignAndSupply_Programs\Complaint_Program\";
             string server_path = @"\\designsvr1\apps\Design and Supply MS ACCESS\Frontend\Complaint_Program\";
@@ -110,16 +114,19 @@ namespace programMaster
             catch
             {
                 MessageBox.Show("Unable to download new version - Please check that you do not already have the " + app_name + " open.", "Unable to download " + app_name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lockButtons(true);
                 return;
             }
             MessageBox.Show("Please wait while the newest version of " + app_name + " downloads", "Downloading...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             //download the new version from the server
             File.Copy(server_path + app_name + version, full_local_path);
             Process.Start(full_local_path);
+            lockButtons(true);
         }
 
         private void btnFitting_Click(object sender, EventArgs e)
         {
+            lockButtons(false);
             string app_name = "Fitting_Program";
             string path = @"C:\DesignAndSupply_Programs\Fitting_Program\";
             string server_path = @"\\designsvr1\apps\Design and Supply MS ACCESS\Frontend\Fitting_Program\";
@@ -145,6 +152,7 @@ namespace programMaster
             catch
             {
                 MessageBox.Show("Unable to download new version - Please check that you do not already have the " + app_name + " open.", "Unable to download " + app_name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lockButtons(true);
                 return;
             }
 
@@ -152,10 +160,12 @@ namespace programMaster
             //download the new version from the server
             File.Copy(server_path + app_name + version, full_local_path);
             Process.Start(full_local_path);
+            lockButtons(true);
         }
 
         private void btnPriceLog_Click(object sender, EventArgs e)
         {
+            lockButtons(false);
             string app_name = "Price_Log_Program";
             string path = @"C:\DesignAndSupply_Programs\Price_Log_Program\";
             string server_path = @"\\designsvr1\apps\Design and Supply MS ACCESS\Frontend\Price_Log_Program\";
@@ -181,6 +191,7 @@ namespace programMaster
             catch
             {
                 MessageBox.Show("Unable to download new version - Please check that you do not already have the " + app_name + " open.", "Unable to download " + app_name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lockButtons(true);
                 return;
             }
 
@@ -188,10 +199,12 @@ namespace programMaster
             //download the new version from the server
             File.Copy(server_path + app_name + version, full_local_path);
             Process.Start(full_local_path);
+            lockButtons(true);
         }
 
         private void btnCE_Click(object sender, EventArgs e)
         {
+            lockButtons(false);
             string app_name = "Slimline_CE_Program";
             string path = @"C:\DesignAndSupply_Programs\Slimline_CE_Program\";
             string server_path = @"\\designsvr1\apps\Design and Supply MS ACCESS\Frontend\Slimline_CE_Program\";
@@ -217,16 +230,19 @@ namespace programMaster
             catch
             {
                 MessageBox.Show("Unable to download new version - Please check that you do not already have the " + app_name + " open.", "Unable to download " + app_name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lockButtons(true);
                 return;
             }
             MessageBox.Show("Please wait while the newest version of " + app_name + " downloads", "Downloading...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             //download the new version from the server
             File.Copy(server_path + app_name + version, full_local_path);
             Process.Start(full_local_path);
+            lockButtons(true);
         }
 
         private void btnEnquiryLog_Click(object sender, EventArgs e)
         {
+            lockButtons(false);
             var excelProcesses = Process.GetProcessesByName("enquiryMaster");
             foreach (var process in excelProcesses)
             {
@@ -234,10 +250,12 @@ namespace programMaster
             }
             string server_path = @"\\designsvr1\apps\Design and Supply CSharp\MiniApps\enquiryMaster\enquiryMaster.application";
             Process.Start(server_path);
+            lockButtons(true);
         }
 
         private void btnCalculator_Click(object sender, EventArgs e)
         {
+            lockButtons(false);
             var excelProcesses = Process.GetProcessesByName("InstallCalculator");
             foreach (var process in excelProcesses)
             {
@@ -245,10 +263,25 @@ namespace programMaster
             }
             string server_path = @"\\designsvr1\apps\Design and Supply CSharp\MiniApps\InstallationCalculator\InstallCalculator.application";
             Process.Start(server_path);
+            lockButtons(true);
+        }
+
+        private void btnAllocator_Click(object sender, EventArgs e)
+        {
+            lockButtons(false);
+            var excelProcesses = Process.GetProcessesByName("AllocationMaster");
+            foreach (var process in excelProcesses)
+            {
+                process.Kill();
+            }
+            string server_path = @"\\designsvr1\apps\Design and Supply CSharp\MiniApps\AllocationMaster\AllocationMaster.application";
+            Process.Start(server_path);
+            lockButtons(true);
         }
 
         private void btnPowerPlanner_Click(object sender, EventArgs e)
         {
+            lockButtons(false);
             var excelProcesses = Process.GetProcessesByName("PowerPlanner");
             foreach (var process in excelProcesses)
             {
@@ -256,6 +289,7 @@ namespace programMaster
             }
             string server_path = @"\\designsvr1\apps\Design and Supply CSharp\MiniApps\PowerPlanner\PowerPlanner.application";
             Process.Start(server_path);
+            lockButtons(true);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -276,6 +310,7 @@ namespace programMaster
 
         private void btnBatching_Click(object sender, EventArgs e)
         {
+            lockButtons(false);
             string app_name = "Batching Program";
             string path = @"C:\DesignAndSupply_Programs\Batching Program\";
             string server_path = @"\\designsvr1\apps\Design and Supply MS ACCESS\Frontend\Batching Program\";
@@ -301,6 +336,7 @@ namespace programMaster
             catch
             {
                 MessageBox.Show("Unable to download new version - Please check that you do not already have the " + app_name + " open.", "Unable to download " + app_name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lockButtons(true);
                 return;
             }
 
@@ -308,6 +344,7 @@ namespace programMaster
             //download the new version from the server
             File.Copy(server_path + app_name + version, full_local_path);
             Process.Start(full_local_path);
+            lockButtons(true);
         }
 
         private void btnBatchFolder_Click(object sender, EventArgs e)
@@ -351,5 +388,41 @@ namespace programMaster
             frmPassword frm = new frmPassword(0, path);
             frm.ShowDialog();
         }
+
+
+        private void lockButtons(bool value)
+        {
+            //turn all buttons off and/or on
+            btnDoorOrder.Enabled = value;
+            btnDoorOrderFolder.Enabled = value;
+
+            btnFitting.Enabled = value;
+            btnFittingFolder.Enabled = value;
+
+            btnComplaint.Enabled = value;
+            btnComplaintFolder.Enabled = value;
+
+            btnEnquiryLog.Enabled = value; //c# app dont have folders
+
+            btnBatching.Enabled = value;
+            btnBatchFolder.Enabled = value;
+
+            btnPriceLog.Enabled = value;
+            btnPriceLogFolder.Enabled = value;
+
+            btnCE.Enabled = value;
+            btnCEFolder.Enabled = value;
+
+            btnCalculator.Enabled = value;//c# app dont have folders
+
+            btnPowerPlanner.Enabled = value;//c# app dont have folders
+
+            //menu buttons
+            btnClose.Enabled = value;
+            btnLogOff.Enabled = value;
+            btnAdmin.Enabled = value;
+        }
+
+
     }
 }

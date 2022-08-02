@@ -55,6 +55,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBatchFolder = new System.Windows.Forms.Button();
             this.btnBatching = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnAllocator = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,7 +80,7 @@
             // 
             this.btnLogOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.btnLogOff.Location = new System.Drawing.Point(331, 55);
+            this.btnLogOff.Location = new System.Drawing.Point(331, 59);
             this.btnLogOff.Name = "btnLogOff";
             this.btnLogOff.Size = new System.Drawing.Size(75, 27);
             this.btnLogOff.TabIndex = 3;
@@ -90,7 +92,7 @@
             // 
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.btnAdmin.Location = new System.Drawing.Point(331, 98);
+            this.btnAdmin.Location = new System.Drawing.Point(331, 106);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(75, 27);
             this.btnAdmin.TabIndex = 4;
@@ -230,6 +232,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.btnAllocator);
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.btnPowerPlanner);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
@@ -381,6 +385,30 @@
             this.btnBatching.UseVisualStyleBackColor = true;
             this.btnBatching.Click += new System.EventHandler(this.btnBatching_Click);
             // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Enabled = false;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Location = new System.Drawing.Point(355, 28);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(37, 36);
+            this.button4.TabIndex = 18;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // btnAllocator
+            // 
+            this.btnAllocator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAllocator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.btnAllocator.Location = new System.Drawing.Point(202, 28);
+            this.btnAllocator.Name = "btnAllocator";
+            this.btnAllocator.Size = new System.Drawing.Size(147, 36);
+            this.btnAllocator.TabIndex = 17;
+            this.btnAllocator.Text = "Allocator";
+            this.btnAllocator.UseVisualStyleBackColor = true;
+            this.btnAllocator.Click += new System.EventHandler(this.btnAllocator_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,5 +465,7 @@
         private System.Windows.Forms.Button btnPowerPlanner;
         private System.Windows.Forms.Button btnBatchFolder;
         private System.Windows.Forms.Button btnBatching;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAllocator;
     }
 }
