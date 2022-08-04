@@ -90,6 +90,7 @@
             this.Name = "frmPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Password Required";
+            this.Shown += new System.EventHandler(this.frmPassword_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

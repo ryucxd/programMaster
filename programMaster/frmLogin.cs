@@ -36,6 +36,11 @@ namespace programMaster
                     if (data != null)
                     {
                         CONNECT.staffName = Convert.ToString(data);
+                        if (CONNECT.staffName == "Corey Jones" || CONNECT.staffName == "Tomas Grother")
+                            CONNECT.master_user = -1;
+                        else
+                            CONNECT.master_user = 0;
+                        
                         //we also need to write this shit into the session file
                         sessionFile();
                         this.Hide();

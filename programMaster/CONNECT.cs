@@ -9,6 +9,7 @@ namespace programMaster
     class CONNECT
     {
         public static string   staffName;
+        public static int master_user;
 
         public const string ConnectionString = "user id=sa;" +
              "password=Dodid1;Network Address=192.168.0.150\\sqlexpress;" +

@@ -20,6 +20,9 @@ namespace programMaster
             InitializeComponent();
             _prog_num = prog_num;
             _path = path;
+
+          
+
         }
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
@@ -35,7 +38,7 @@ namespace programMaster
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "m1lkman")
+            if (txtPassword.Text == "m1lkman" || CONNECT.master_user == -1)
             {
                 if (_prog_num == -1)
                 {
@@ -56,6 +59,12 @@ namespace programMaster
                 txtPassword.Text = "";
                 txtPassword.Focus();
             }
+        }
+
+        private void frmPassword_Shown(object sender, EventArgs e)
+        {
+            if (CONNECT.master_user == -1)
+                btnEnter.PerformClick();
         }
     }
 }
