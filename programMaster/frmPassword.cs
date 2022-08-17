@@ -20,9 +20,6 @@ namespace programMaster
             InitializeComponent();
             _prog_num = prog_num;
             _path = path;
-
-          
-
         }
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
@@ -43,7 +40,6 @@ namespace programMaster
                 if (_prog_num == -1)
                 {
                     var frm = new frmAdmin();
-                    frm.Closed += (s, args) => this.Close();
                     frm.ShowDialog();
                     this.Close();
                 }

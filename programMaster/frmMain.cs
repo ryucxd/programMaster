@@ -165,41 +165,54 @@ namespace programMaster
 
         private void btnPriceLog_Click(object sender, EventArgs e)
         {
+            //
             lockButtons(false);
-            string app_name = "Price_Log_Program";
-            string path = @"C:\DesignAndSupply_Programs\Price_Log_Program\";
-            string server_path = @"\\designsvr1\apps\Design and Supply MS ACCESS\Frontend\Price_Log_Program\";
-            string sql = "select version from dbo.prog_version_numbers where program = 'price_log_program';";
-            //get the latest prog number 
-            using (SqlConnection conn = new SqlConnection(CONNECT.ConnectionStringUser))
+            var excelProcesses = Process.GetProcessesByName("PriceMaster");
+            foreach (var process in excelProcesses)
             {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                    version = cmd.ExecuteScalar().ToString();
-                conn.Close();
+                process.Kill();
             }
-            string full_local_path = path + app_name + version;
-
-            //check if the directory exists 
-            DirectoryInfo di = Directory.CreateDirectory(path);
-            //if the access file already exists in here we need to remove it
-            try
-            {
-                foreach (FileInfo file in di.GetFiles())
-                    file.Delete();
-            }
-            catch
-            {
-                MessageBox.Show("Unable to download new version - Please check that you do not already have the " + app_name + " open.", "Unable to download " + app_name, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lockButtons(true);
-                return;
-            }
-
-            MessageBox.Show("Please wait while the newest version of " + app_name + " downloads", "Downloading...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //download the new version from the server
-            File.Copy(server_path + app_name + version, full_local_path);
-            Process.Start(full_local_path);
+            string server_path = @"\\designsvr1\apps\Design and Supply CSharp\MiniApps\PriceMaster\PriceMaster.application";
+            Process.Start(server_path);
             lockButtons(true);
+
+
+            //vv old price log code
+            //lockButtons(false);
+            //string app_name = "Price_Log_Program";
+            //string path = @"C:\DesignAndSupply_Programs\Price_Log_Program\";
+            //string server_path = @"\\designsvr1\apps\Design and Supply MS ACCESS\Frontend\Price_Log_Program\";
+            //string sql = "select version from dbo.prog_version_numbers where program = 'price_log_program';";
+            ////get the latest prog number 
+            //using (SqlConnection conn = new SqlConnection(CONNECT.ConnectionStringUser))
+            //{
+            //    conn.Open();
+            //    using (SqlCommand cmd = new SqlCommand(sql, conn))
+            //        version = cmd.ExecuteScalar().ToString();
+            //    conn.Close();
+            //}
+            //string full_local_path = path + app_name + version;
+
+            ////check if the directory exists 
+            //DirectoryInfo di = Directory.CreateDirectory(path);
+            ////if the access file already exists in here we need to remove it
+            //try
+            //{
+            //    foreach (FileInfo file in di.GetFiles())
+            //        file.Delete();
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Unable to download new version - Please check that you do not already have the " + app_name + " open.", "Unable to download " + app_name, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    lockButtons(true);
+            //    return;
+            //}
+
+            //MessageBox.Show("Please wait while the newest version of " + app_name + " downloads", "Downloading...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            ////download the new version from the server
+            //File.Copy(server_path + app_name + version, full_local_path);
+            //Process.Start(full_local_path);
+            //lockButtons(true);
         }
 
         private void btnCE_Click(object sender, EventArgs e)
@@ -427,6 +440,18 @@ namespace programMaster
 
         }
 
+        private void btnHolidayChecker_Click(object sender, EventArgs e)
+        {
+            lockButtons(false);
+            var excelProcesses = Process.GetProcessesByName("PowerPlanner");
+            foreach (var process in excelProcesses)
+            {
+                process.Kill();
+            }
+            string server_path = @"\\designsvr1\apps\Design and Supply CSharp\MiniApps\HolidayMaster\Office\HolidayMaster.application";
+            Process.Start(server_path);
+            lockButtons(true);
 
+        }
     }
 }

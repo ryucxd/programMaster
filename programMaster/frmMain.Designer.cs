@@ -36,27 +36,29 @@
             this.btnComplaint = new System.Windows.Forms.Button();
             this.btnDoorOrder = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBatchFolder = new System.Windows.Forms.Button();
+            this.btnBatching = new System.Windows.Forms.Button();
             this.btnEnquiryLog = new System.Windows.Forms.Button();
-            this.btnCE = new System.Windows.Forms.Button();
-            this.btnPriceLog = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnCalculator = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnPowerPlanner = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnPriceLogFolder = new System.Windows.Forms.Button();
-            this.btnCEFolder = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnComplaintFolder = new System.Windows.Forms.Button();
             this.btnFittingFolder = new System.Windows.Forms.Button();
             this.btnDoorOrderFolder = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBatchFolder = new System.Windows.Forms.Button();
-            this.btnBatching = new System.Windows.Forms.Button();
+            this.btnCE = new System.Windows.Forms.Button();
+            this.btnPriceLog = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPriceLogFolder = new System.Windows.Forms.Button();
+            this.btnCEFolder = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnCalculator = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.btnAllocator = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnPowerPlanner = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnHolidayChecker = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -138,6 +140,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnHolidayChecker);
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.btnBatchFolder);
             this.groupBox1.Controls.Add(this.btnBatching);
             this.groupBox1.Controls.Add(this.btnEnquiryLog);
@@ -156,6 +160,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "General Purpose";
             // 
+            // btnBatchFolder
+            // 
+            this.btnBatchFolder.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
+            this.btnBatchFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBatchFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBatchFolder.Location = new System.Drawing.Point(6, 126);
+            this.btnBatchFolder.Name = "btnBatchFolder";
+            this.btnBatchFolder.Size = new System.Drawing.Size(37, 36);
+            this.btnBatchFolder.TabIndex = 19;
+            this.btnBatchFolder.UseVisualStyleBackColor = true;
+            this.btnBatchFolder.Click += new System.EventHandler(this.btnBatchFolder_Click);
+            // 
+            // btnBatching
+            // 
+            this.btnBatching.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBatching.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.btnBatching.Location = new System.Drawing.Point(49, 126);
+            this.btnBatching.Name = "btnBatching";
+            this.btnBatching.Size = new System.Drawing.Size(147, 36);
+            this.btnBatching.TabIndex = 18;
+            this.btnBatching.Text = "Batching Program";
+            this.btnBatching.UseVisualStyleBackColor = true;
+            this.btnBatching.Click += new System.EventHandler(this.btnBatching_Click);
+            // 
             // btnEnquiryLog
             // 
             this.btnEnquiryLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -167,142 +195,6 @@
             this.btnEnquiryLog.Text = "Enquiry Log";
             this.btnEnquiryLog.UseVisualStyleBackColor = true;
             this.btnEnquiryLog.Click += new System.EventHandler(this.btnEnquiryLog_Click);
-            // 
-            // btnCE
-            // 
-            this.btnCE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.btnCE.Location = new System.Drawing.Point(202, 27);
-            this.btnCE.Name = "btnCE";
-            this.btnCE.Size = new System.Drawing.Size(147, 36);
-            this.btnCE.TabIndex = 10;
-            this.btnCE.Text = "CE Program";
-            this.btnCE.UseVisualStyleBackColor = true;
-            this.btnCE.Click += new System.EventHandler(this.btnCE_Click);
-            // 
-            // btnPriceLog
-            // 
-            this.btnPriceLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPriceLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.btnPriceLog.Location = new System.Drawing.Point(49, 28);
-            this.btnPriceLog.Name = "btnPriceLog";
-            this.btnPriceLog.Size = new System.Drawing.Size(147, 36);
-            this.btnPriceLog.TabIndex = 9;
-            this.btnPriceLog.Text = "Price Log";
-            this.btnPriceLog.UseVisualStyleBackColor = true;
-            this.btnPriceLog.Click += new System.EventHandler(this.btnPriceLog_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnPriceLogFolder);
-            this.groupBox2.Controls.Add(this.btnPriceLog);
-            this.groupBox2.Controls.Add(this.btnCE);
-            this.groupBox2.Controls.Add(this.btnCEFolder);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.groupBox2.Location = new System.Drawing.Point(8, 347);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(398, 80);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Slimline";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.btnCalculator);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.groupBox3.Location = new System.Drawing.Point(8, 441);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(398, 80);
-            this.groupBox3.TabIndex = 19;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Install";
-            // 
-            // btnCalculator
-            // 
-            this.btnCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.btnCalculator.Location = new System.Drawing.Point(49, 28);
-            this.btnCalculator.Name = "btnCalculator";
-            this.btnCalculator.Size = new System.Drawing.Size(147, 36);
-            this.btnCalculator.TabIndex = 9;
-            this.btnCalculator.Text = "Calculator";
-            this.btnCalculator.UseVisualStyleBackColor = true;
-            this.btnCalculator.Click += new System.EventHandler(this.btnCalculator_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.btnAllocator);
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.btnPowerPlanner);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.groupBox4.Location = new System.Drawing.Point(8, 539);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(398, 80);
-            this.groupBox4.TabIndex = 20;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Shop Floor";
-            // 
-            // btnPowerPlanner
-            // 
-            this.btnPowerPlanner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPowerPlanner.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.btnPowerPlanner.Location = new System.Drawing.Point(49, 28);
-            this.btnPowerPlanner.Name = "btnPowerPlanner";
-            this.btnPowerPlanner.Size = new System.Drawing.Size(147, 36);
-            this.btnPowerPlanner.TabIndex = 9;
-            this.btnPowerPlanner.Text = "PowerPlanner";
-            this.btnPowerPlanner.UseVisualStyleBackColor = true;
-            this.btnPowerPlanner.Click += new System.EventHandler(this.btnPowerPlanner_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Enabled = false;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(6, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 36);
-            this.button1.TabIndex = 16;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Enabled = false;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(6, 28);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(37, 36);
-            this.button3.TabIndex = 16;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // btnPriceLogFolder
-            // 
-            this.btnPriceLogFolder.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
-            this.btnPriceLogFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPriceLogFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPriceLogFolder.Location = new System.Drawing.Point(6, 28);
-            this.btnPriceLogFolder.Name = "btnPriceLogFolder";
-            this.btnPriceLogFolder.Size = new System.Drawing.Size(37, 36);
-            this.btnPriceLogFolder.TabIndex = 16;
-            this.btnPriceLogFolder.UseVisualStyleBackColor = true;
-            this.btnPriceLogFolder.Click += new System.EventHandler(this.btnPriceLogFolder_Click);
-            // 
-            // btnCEFolder
-            // 
-            this.btnCEFolder.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
-            this.btnCEFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCEFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCEFolder.Location = new System.Drawing.Point(355, 27);
-            this.btnCEFolder.Name = "btnCEFolder";
-            this.btnCEFolder.Size = new System.Drawing.Size(37, 36);
-            this.btnCEFolder.TabIndex = 14;
-            this.btnCEFolder.UseVisualStyleBackColor = true;
-            this.btnCEFolder.Click += new System.EventHandler(this.btnCEFolder_Click);
             // 
             // button2
             // 
@@ -352,38 +244,117 @@
             this.btnDoorOrderFolder.UseVisualStyleBackColor = true;
             this.btnDoorOrderFolder.Click += new System.EventHandler(this.btnDoorOrderFolder_Click);
             // 
-            // pictureBox1
+            // btnCE
             // 
-            this.pictureBox1.Image = global::programMaster.Properties.Resources.logo_no_background;
-            this.pictureBox1.Location = new System.Drawing.Point(32, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(266, 121);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.btnCE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.btnCE.Location = new System.Drawing.Point(202, 27);
+            this.btnCE.Name = "btnCE";
+            this.btnCE.Size = new System.Drawing.Size(147, 36);
+            this.btnCE.TabIndex = 10;
+            this.btnCE.Text = "CE Program";
+            this.btnCE.UseVisualStyleBackColor = true;
+            this.btnCE.Click += new System.EventHandler(this.btnCE_Click);
             // 
-            // btnBatchFolder
+            // btnPriceLog
             // 
-            this.btnBatchFolder.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
-            this.btnBatchFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBatchFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBatchFolder.Location = new System.Drawing.Point(6, 126);
-            this.btnBatchFolder.Name = "btnBatchFolder";
-            this.btnBatchFolder.Size = new System.Drawing.Size(37, 36);
-            this.btnBatchFolder.TabIndex = 19;
-            this.btnBatchFolder.UseVisualStyleBackColor = true;
-            this.btnBatchFolder.Click += new System.EventHandler(this.btnBatchFolder_Click);
+            this.btnPriceLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPriceLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.btnPriceLog.Location = new System.Drawing.Point(49, 28);
+            this.btnPriceLog.Name = "btnPriceLog";
+            this.btnPriceLog.Size = new System.Drawing.Size(147, 36);
+            this.btnPriceLog.TabIndex = 9;
+            this.btnPriceLog.Text = "Price Log";
+            this.btnPriceLog.UseVisualStyleBackColor = true;
+            this.btnPriceLog.Click += new System.EventHandler(this.btnPriceLog_Click);
             // 
-            // btnBatching
+            // groupBox2
             // 
-            this.btnBatching.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBatching.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.btnBatching.Location = new System.Drawing.Point(49, 126);
-            this.btnBatching.Name = "btnBatching";
-            this.btnBatching.Size = new System.Drawing.Size(147, 36);
-            this.btnBatching.TabIndex = 18;
-            this.btnBatching.Text = "Batching Program";
-            this.btnBatching.UseVisualStyleBackColor = true;
-            this.btnBatching.Click += new System.EventHandler(this.btnBatching_Click);
+            this.groupBox2.Controls.Add(this.btnPriceLogFolder);
+            this.groupBox2.Controls.Add(this.btnPriceLog);
+            this.groupBox2.Controls.Add(this.btnCE);
+            this.groupBox2.Controls.Add(this.btnCEFolder);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.groupBox2.Location = new System.Drawing.Point(8, 347);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(398, 80);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Slimline";
+            // 
+            // btnPriceLogFolder
+            // 
+            this.btnPriceLogFolder.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
+            this.btnPriceLogFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPriceLogFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPriceLogFolder.Location = new System.Drawing.Point(6, 28);
+            this.btnPriceLogFolder.Name = "btnPriceLogFolder";
+            this.btnPriceLogFolder.Size = new System.Drawing.Size(37, 36);
+            this.btnPriceLogFolder.TabIndex = 16;
+            this.btnPriceLogFolder.UseVisualStyleBackColor = true;
+            this.btnPriceLogFolder.Click += new System.EventHandler(this.btnPriceLogFolder_Click);
+            // 
+            // btnCEFolder
+            // 
+            this.btnCEFolder.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
+            this.btnCEFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCEFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCEFolder.Location = new System.Drawing.Point(355, 27);
+            this.btnCEFolder.Name = "btnCEFolder";
+            this.btnCEFolder.Size = new System.Drawing.Size(37, 36);
+            this.btnCEFolder.TabIndex = 14;
+            this.btnCEFolder.UseVisualStyleBackColor = true;
+            this.btnCEFolder.Click += new System.EventHandler(this.btnCEFolder_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.btnCalculator);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.groupBox3.Location = new System.Drawing.Point(8, 441);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(398, 80);
+            this.groupBox3.TabIndex = 19;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Install";
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Enabled = false;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(6, 28);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(37, 36);
+            this.button3.TabIndex = 16;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnCalculator
+            // 
+            this.btnCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.btnCalculator.Location = new System.Drawing.Point(49, 28);
+            this.btnCalculator.Name = "btnCalculator";
+            this.btnCalculator.Size = new System.Drawing.Size(147, 36);
+            this.btnCalculator.TabIndex = 9;
+            this.btnCalculator.Text = "Calculator";
+            this.btnCalculator.UseVisualStyleBackColor = true;
+            this.btnCalculator.Click += new System.EventHandler(this.btnCalculator_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.btnAllocator);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.btnPowerPlanner);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.groupBox4.Location = new System.Drawing.Point(8, 539);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(398, 80);
+            this.groupBox4.TabIndex = 20;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Shop Floor";
             // 
             // button4
             // 
@@ -408,6 +379,63 @@
             this.btnAllocator.Text = "Allocator";
             this.btnAllocator.UseVisualStyleBackColor = true;
             this.btnAllocator.Click += new System.EventHandler(this.btnAllocator_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Enabled = false;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(6, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(37, 36);
+            this.button1.TabIndex = 16;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnPowerPlanner
+            // 
+            this.btnPowerPlanner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPowerPlanner.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.btnPowerPlanner.Location = new System.Drawing.Point(49, 28);
+            this.btnPowerPlanner.Name = "btnPowerPlanner";
+            this.btnPowerPlanner.Size = new System.Drawing.Size(147, 36);
+            this.btnPowerPlanner.TabIndex = 9;
+            this.btnPowerPlanner.Text = "PowerPlanner";
+            this.btnPowerPlanner.UseVisualStyleBackColor = true;
+            this.btnPowerPlanner.Click += new System.EventHandler(this.btnPowerPlanner_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::programMaster.Properties.Resources.logo_no_background;
+            this.pictureBox1.Location = new System.Drawing.Point(32, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(266, 121);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnHolidayChecker
+            // 
+            this.btnHolidayChecker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHolidayChecker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.btnHolidayChecker.Location = new System.Drawing.Point(202, 126);
+            this.btnHolidayChecker.Name = "btnHolidayChecker";
+            this.btnHolidayChecker.Size = new System.Drawing.Size(147, 36);
+            this.btnHolidayChecker.TabIndex = 20;
+            this.btnHolidayChecker.Text = "Holiday Checker";
+            this.btnHolidayChecker.UseVisualStyleBackColor = true;
+            this.btnHolidayChecker.Click += new System.EventHandler(this.btnHolidayChecker_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Enabled = false;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Location = new System.Drawing.Point(355, 126);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(37, 36);
+            this.button6.TabIndex = 21;
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -467,5 +495,7 @@
         private System.Windows.Forms.Button btnBatching;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnAllocator;
+        private System.Windows.Forms.Button btnHolidayChecker;
+        private System.Windows.Forms.Button button6;
     }
 }

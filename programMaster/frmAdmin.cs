@@ -16,7 +16,8 @@ namespace programMaster
         public frmAdmin()
         {
             InitializeComponent();
-            string sql = "select Program,Version from dbo.prog_version_numbers";
+            string sql = "select Program, left(Version, 1) as Prefix, RIGHT(left(version, len(version) - charindex('.', reverse(version))), LEN(left(version, len(version) - charindex('.', reverse(version)))) - 1) as Version, " +
+                "reverse(left(reverse(version), charindex('.', reverse(version)))) as Extension from dbo.prog_version_numbers";
 
             using (SqlConnection conn = new SqlConnection(CONNECT.ConnectionStringUser))
             {
@@ -30,7 +31,9 @@ namespace programMaster
                     conn.Close();
 
                     dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+                    dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
             }
         }
@@ -49,7 +52,7 @@ namespace programMaster
                 conn.Open();
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    sql = "UPDATE dbo.prog_version_numbers SET [version] = '" + row.Cells[1].Value.ToString() + "' WHERE program = '" + row.Cells[0].Value.ToString() + "'";
+                    sql = "UPDATE dbo.prog_version_numbers SET [version] = '" + row.Cells[1].Value.ToString() + row.Cells[2].Value.ToString() + row.Cells[3].Value.ToString() + "' WHERE program = '" + row.Cells[0].Value.ToString() + "'";
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                         cmd.ExecuteNonQuery();
                 }
