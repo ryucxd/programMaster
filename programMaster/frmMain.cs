@@ -436,6 +436,8 @@ namespace programMaster
             btnClose.Enabled = value;
             btnLogOff.Enabled = value;
             btnAdmin.Enabled = value;
+            btnHolidayChecker.Enabled = value;
+
 
 
         }
