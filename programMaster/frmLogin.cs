@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Diagnostics;
+using System.IO;
 
 namespace programMaster
 {
@@ -21,6 +22,18 @@ namespace programMaster
 
             //create session file here 
 
+            //check if the directory for our programs + session file
+            Directory.CreateDirectory(@"C:\DesignAndSupply_Programs\Session\");
+
+            //check if the excel file exists
+            //@"C:\DesignAndSupply_Programs\Session\user_session.csv"
+            bool csv = File.Exists(@"C:\DesignAndSupply_Programs\Session\user_session.csv");
+
+            if (csv == false)//copy it from > \\designsvr1\apps\Design and Supply CSharp
+                File.Copy(@"\\designsvr1\apps\Design and Supply CSharp\user_session.csv", @"C:\DesignAndSupply_Programs\Session\user_session.csv");
+
+            //also see if C:\temp exists  (a lot of programs use this directory)
+            Directory.CreateDirectory(@"C:\temp");
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
