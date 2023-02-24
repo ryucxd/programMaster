@@ -36,6 +36,8 @@
             this.btnComplaint = new System.Windows.Forms.Button();
             this.btnDoorOrder = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnHolidayChecker = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.btnBatchFolder = new System.Windows.Forms.Button();
             this.btnBatching = new System.Windows.Forms.Button();
             this.btnEnquiryLog = new System.Windows.Forms.Button();
@@ -57,8 +59,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnPowerPlanner = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnHolidayChecker = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnToDo = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.btnStaffHolidays = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -118,7 +122,7 @@
             // 
             this.btnComplaint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.btnComplaint.Location = new System.Drawing.Point(49, 76);
+            this.btnComplaint.Location = new System.Drawing.Point(49, 75);
             this.btnComplaint.Name = "btnComplaint";
             this.btnComplaint.Size = new System.Drawing.Size(147, 36);
             this.btnComplaint.TabIndex = 7;
@@ -140,6 +144,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnToDo);
+            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.button8);
+            this.groupBox1.Controls.Add(this.btnStaffHolidays);
             this.groupBox1.Controls.Add(this.btnHolidayChecker);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.btnBatchFolder);
@@ -155,17 +163,41 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.groupBox1.Location = new System.Drawing.Point(8, 157);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(398, 173);
+            this.groupBox1.Size = new System.Drawing.Size(398, 230);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "General Purpose";
+            // 
+            // btnHolidayChecker
+            // 
+            this.btnHolidayChecker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHolidayChecker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.btnHolidayChecker.Location = new System.Drawing.Point(202, 173);
+            this.btnHolidayChecker.Name = "btnHolidayChecker";
+            this.btnHolidayChecker.Size = new System.Drawing.Size(147, 36);
+            this.btnHolidayChecker.TabIndex = 20;
+            this.btnHolidayChecker.Text = "Holiday Checker";
+            this.btnHolidayChecker.UseVisualStyleBackColor = true;
+            this.btnHolidayChecker.Click += new System.EventHandler(this.btnHolidayChecker_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Enabled = false;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Location = new System.Drawing.Point(355, 124);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(37, 36);
+            this.button6.TabIndex = 21;
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // btnBatchFolder
             // 
             this.btnBatchFolder.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
             this.btnBatchFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBatchFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBatchFolder.Location = new System.Drawing.Point(6, 126);
+            this.btnBatchFolder.Location = new System.Drawing.Point(6, 124);
             this.btnBatchFolder.Name = "btnBatchFolder";
             this.btnBatchFolder.Size = new System.Drawing.Size(37, 36);
             this.btnBatchFolder.TabIndex = 19;
@@ -176,7 +208,7 @@
             // 
             this.btnBatching.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBatching.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.btnBatching.Location = new System.Drawing.Point(49, 126);
+            this.btnBatching.Location = new System.Drawing.Point(49, 124);
             this.btnBatching.Name = "btnBatching";
             this.btnBatching.Size = new System.Drawing.Size(147, 36);
             this.btnBatching.TabIndex = 18;
@@ -188,7 +220,7 @@
             // 
             this.btnEnquiryLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnquiryLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.btnEnquiryLog.Location = new System.Drawing.Point(202, 76);
+            this.btnEnquiryLog.Location = new System.Drawing.Point(202, 75);
             this.btnEnquiryLog.Name = "btnEnquiryLog";
             this.btnEnquiryLog.Size = new System.Drawing.Size(147, 36);
             this.btnEnquiryLog.TabIndex = 16;
@@ -202,7 +234,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Enabled = false;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(355, 76);
+            this.button2.Location = new System.Drawing.Point(355, 75);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(37, 36);
             this.button2.TabIndex = 17;
@@ -213,7 +245,7 @@
             this.btnComplaintFolder.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
             this.btnComplaintFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnComplaintFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComplaintFolder.Location = new System.Drawing.Point(6, 76);
+            this.btnComplaintFolder.Location = new System.Drawing.Point(6, 75);
             this.btnComplaintFolder.Name = "btnComplaintFolder";
             this.btnComplaintFolder.Size = new System.Drawing.Size(37, 36);
             this.btnComplaintFolder.TabIndex = 15;
@@ -275,7 +307,7 @@
             this.groupBox2.Controls.Add(this.btnCE);
             this.groupBox2.Controls.Add(this.btnCEFolder);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.groupBox2.Location = new System.Drawing.Point(8, 347);
+            this.groupBox2.Location = new System.Drawing.Point(8, 392);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(398, 80);
             this.groupBox2.TabIndex = 18;
@@ -311,7 +343,7 @@
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.btnCalculator);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.groupBox3.Location = new System.Drawing.Point(8, 441);
+            this.groupBox3.Location = new System.Drawing.Point(8, 486);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(398, 80);
             this.groupBox3.TabIndex = 19;
@@ -349,7 +381,7 @@
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.btnPowerPlanner);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.groupBox4.Location = new System.Drawing.Point(8, 539);
+            this.groupBox4.Location = new System.Drawing.Point(8, 584);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(398, 80);
             this.groupBox4.TabIndex = 20;
@@ -413,35 +445,58 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // btnHolidayChecker
+            // btnToDo
             // 
-            this.btnHolidayChecker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHolidayChecker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.btnHolidayChecker.Location = new System.Drawing.Point(202, 126);
-            this.btnHolidayChecker.Name = "btnHolidayChecker";
-            this.btnHolidayChecker.Size = new System.Drawing.Size(147, 36);
-            this.btnHolidayChecker.TabIndex = 20;
-            this.btnHolidayChecker.Text = "Holiday Checker";
-            this.btnHolidayChecker.UseVisualStyleBackColor = true;
-            this.btnHolidayChecker.Click += new System.EventHandler(this.btnHolidayChecker_Click);
+            this.btnToDo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.btnToDo.Location = new System.Drawing.Point(202, 124);
+            this.btnToDo.Name = "btnToDo";
+            this.btnToDo.Size = new System.Drawing.Size(147, 36);
+            this.btnToDo.TabIndex = 24;
+            this.btnToDo.Text = "TO DO";
+            this.btnToDo.UseVisualStyleBackColor = true;
+            this.btnToDo.Click += new System.EventHandler(this.btnToDo_Click);
             // 
-            // button6
+            // button7
             // 
-            this.button6.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Enabled = false;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Location = new System.Drawing.Point(355, 126);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(37, 36);
-            this.button6.TabIndex = 21;
-            this.button6.UseVisualStyleBackColor = true;
+            this.button7.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.Enabled = false;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Location = new System.Drawing.Point(355, 173);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(37, 36);
+            this.button7.TabIndex = 25;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImage = global::programMaster.Properties.Resources.open_file_folder_emoji;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(6, 173);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(37, 36);
+            this.button8.TabIndex = 23;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // btnStaffHolidays
+            // 
+            this.btnStaffHolidays.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStaffHolidays.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.btnStaffHolidays.Location = new System.Drawing.Point(49, 173);
+            this.btnStaffHolidays.Name = "btnStaffHolidays";
+            this.btnStaffHolidays.Size = new System.Drawing.Size(147, 36);
+            this.btnStaffHolidays.TabIndex = 22;
+            this.btnStaffHolidays.Text = "Staff Holidays";
+            this.btnStaffHolidays.UseVisualStyleBackColor = true;
+            this.btnStaffHolidays.Click += new System.EventHandler(this.btnStaffHolidays_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 637);
+            this.ClientSize = new System.Drawing.Size(418, 688);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -497,5 +552,9 @@
         private System.Windows.Forms.Button btnAllocator;
         private System.Windows.Forms.Button btnHolidayChecker;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnToDo;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnStaffHolidays;
     }
 }

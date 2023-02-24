@@ -22,18 +22,20 @@ namespace programMaster
             InitializeComponent();
             this.ShowIcon = false;
             this.Text = "Program Menu - Logged in As: " + CONNECT.staffName;
+            
+           // btnClose.Enabled = true;
         }
 
-        private const int CP_NOCLOSE_BUTTON = 0x200;
-        protected override CreateParams CreateParams //absolutely no idea how this works but it overrides some code that runs on launch and makes the close button unclickable
-        {
-            get
-            {
-                CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
-                return myCp;
-            }
-        }
+        //////private const int CP_NOCLOSE_BUTTON = 0x200;
+        //////protected override CreateParams CreateParams //absolutely no idea how this works but it overrides some code that runs on launch and makes the close button unclickable
+        //////{
+        //////    get
+        //////    {
+        //////        CreateParams myCp = base.CreateParams;
+        //////        myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+        //////        return myCp;
+        //////    }
+        //////}
 
 
         private void btnDoorOrder_Click(object sender, EventArgs e)
@@ -435,6 +437,10 @@ namespace programMaster
 
             btnAllocator.Enabled = value;
 
+            btnToDo.Enabled = value;
+
+            btnStaffHolidays.Enabled = value;
+
             //menu buttons  
             btnLogOff.Enabled = value;
             btnAdmin.Enabled = value;
@@ -448,7 +454,7 @@ namespace programMaster
         private void btnHolidayChecker_Click(object sender, EventArgs e)
         {
             lockButtons(false);
-            var excelProcesses = Process.GetProcessesByName("PowerPlanner");
+            var excelProcesses = Process.GetProcessesByName("HolidayMaster");
             foreach (var process in excelProcesses)
             {
                 process.Kill();
@@ -457,6 +463,32 @@ namespace programMaster
             Process.Start(server_path);
             lockButtons(true);
 
+        }
+
+        private void btnToDo_Click(object sender, EventArgs e)
+        {
+            lockButtons(false);
+            var excelProcesses = Process.GetProcessesByName("DSToDo");
+            foreach (var process in excelProcesses)
+            {
+                process.Kill();
+            }
+            string server_path = @"\\designsvr1\apps\Design and Supply CSharp\MiniApps\ToDo\toDoMaster.application";
+            Process.Start(server_path);
+            lockButtons(true);
+        }
+
+        private void btnStaffHolidays_Click(object sender, EventArgs e)
+        {
+            lockButtons(false);
+            var excelProcesses = Process.GetProcessesByName("HolidayViewMaster");
+            foreach (var process in excelProcesses)
+            {
+                process.Kill();
+            }
+            string server_path = @"\\designsvr1\apps\Design and Supply CSharp\MiniApps\holidayViewMaster\HolidayViewMaster.application";
+            Process.Start(server_path);
+            lockButtons(true);
         }
     }
 }
